@@ -15,16 +15,17 @@ const rest = new REST({ version: "10" }).setToken(TOKEN);
 
 (async () => {
   try {
-    console.log("🔄 Registering slash commands...");
+    console.log("Registering slash commands...");
 
-    // GUILD command (langsung muncul, disarankan)
     await rest.put(
       Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
       { body: commands }
     );
 
-    console.log("✅ Slash command berhasil didaftarkan");
+    console.log("✅ Command /roles berhasil didaftarkan");
   } catch (error) {
-    console.error(error);
+    console.error("❌ Gagal register command:", error);
   }
 })();
+
+
