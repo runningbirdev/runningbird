@@ -98,4 +98,12 @@ client.on("interactionCreate", async interaction => {
   }
 });
 
+client.on("interactionCreate", async interaction => {
+  if (!interaction.isChatInputCommand()) return;
+
+  if (interaction.commandName === "roles") {
+    // embed + tombol role
+  }
+});
+
 client.login(process.env.TOKEN);
